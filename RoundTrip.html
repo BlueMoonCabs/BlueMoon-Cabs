@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round Trip Booking</title>
+    <link rel="icon" href="img/Bluemoon logo white300 ppi.svg">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="RoundTrip.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "kDNwZI478mc6_JYhT",
+      });
+    })();
+   </script>
+</head>
+<body>
+    
+<div class="container">
+    <header id="triptype">Round Trip Booking </header>
+
+    <form id="roundTripForm">
+        <div class="form-group">
+            <label for="bookername">Name:</label>
+            <input type="text" id="bookername" placeholder="Enter your Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="bookeremail">Email:</label>
+            <input type="email" id="bookeremail" placeholder="Enter your Email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="bookernumber">Phone Number:</label>
+            <input type="tel" pattern="[6-9]{1}[0-9]{9}" maxlength="10" id="bookernumber" placeholder="Enter your Mobile Number" required>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <label for="departure">Pickup Location:</label>
+                <input type="text" id="departure" placeholder="Enter departure location" autocomplete="off" oninput="suggestPickupLocations(this.value)" required>
+                <ul id="suggestion-list" style="list-style-type: none; margin: 0; padding: 0; position: absolute; border: 1px solid #ccc; background-color: white; max-height: 150px; overflow-y: auto; display: none;width: 620px;z-index: 20;"></ul>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dropDate">Return Date:</label>
+            <input type="date" id="dropDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="travelers">Vehicle Type:</label>
+            <select id="travelers" class="cname" required>
+                <option value="">--Select Vehicle--</option>
+                <option>Mini</option>
+                <option>Sedan</option>
+                <option>Seven Seaters</option>
+                <option>Travellers</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" rows="4" placeholder="Enter any special requests or notes"></textarea>
+        </div>
+        <center>
+            <button type="button" onclick="submitRoundTripForm()">Submit &#10132</button>
+        </center>
+    </form>
+
+    <div id="output" class="output" style="display: none;"></div>
+</div>
+<script src="RoundTrip.js"></script>
+</body>
+</html>

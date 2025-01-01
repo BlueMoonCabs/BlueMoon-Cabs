@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneWay Trip Booking</title>
+    <link rel="icon" href="img/Bluemoon logo white300 ppi.svg">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="OneWayTrip.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "kDNwZI478mc6_JYhT",
+      });
+    })();
+   </script>
+</head>
+<body>
+    <div class="container">
+        <header>OneWay Trip Booking</header>
+
+        <form id="tripForm">
+            <div class="form-group">
+                <label for="bookername">Name:</label>
+                    <input type="text" id="bookername" placeholder="Enter your Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bookeremail">Email:</label>
+                <input type="email" id="bookeremail" placeholder="Enter your Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bookernumber">Phone Number:</label>
+                <input type="tel" pattern="[6-9]{1}[0-9]{9}" maxlength="10" id="bookernumber" placeholder="Enter your Mobile Number" required>
+            </div>
+
+            <div class="form-group" id="pickup-search">
+                    <label for="startdestination">Pickup Location:</label>
+                    <input type="text" id="startdestination" placeholder="Enter your Pickup Point" autocomplete="off" oninput="suggestPickupLocations(this.value)"  required>
+                    <ul id="pickup-suggestions" class="suggestions-list"></ul>
+            </div>
+
+            <div class="form-group">
+                <label for="enddestination">Drop Location:</label>
+                <input type="text" id="enddestination" placeholder="Enter your Drop Point" autocomplete="off" required>
+                <div id="suggestions" class="suggestions-box"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="travelers">Vehicle Type:</label>
+                <select id="travelers" class="cname" required>
+                    <option value="">--Select Vehicle--</option>
+                    <option>Mini</option>
+                    <option>Sedan</option>
+                    <option>Seven Seaters</option>
+                    <option>Travellers</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional Notes:</label>
+                <textarea id="notes" rows="4" placeholder="Enter any special requests or notes"></textarea>
+            </div>
+            <center>
+                <button type="button" onclick="submitForm()">Submit &#10132</button>
+            </center>
+        </form>
+
+        <div id="output" class="output" style="display: none;"></div>
+    </div>
+    <script src="OneWayTrip.js"></script>
+</body>
+</html>

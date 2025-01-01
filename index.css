@@ -1,0 +1,615 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+@keyframes scrollUp {
+    from {
+      transform: translateY(100px); /* Start below the visible area */
+      opacity: 0;                  /* Start invisible */
+    }
+    to {
+      transform: translateY(0);    /* End at the original position */
+      opacity: 1;                  /* Fully visible */
+    }
+  }
+
+#float-whatsapp-container{
+    position: fixed;
+    right: 30px;
+    bottom: 80px;
+    z-index: 15;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+#float-whatsapp-container p{
+    color: black;
+    position: relative;
+    right: 5px;
+}
+
+#float-whatsapp{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    border: 2px solid black; 
+    background-color: #007BFF;
+}
+
+#float-whatsapp i{
+    position: absolute;
+    right: 27px;
+    top: 13px;
+    font-size: x-large;
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+#header {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+}
+#menu-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.BMLogo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+#name {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+
+
+#menu li:hover {
+    color: #4caf50;
+}
+#menu li {
+    cursor: pointer;
+    color: lightgrey;
+    transition: color 0.3s;
+}
+#choose-trip-name {
+    text-align: center;
+    color: #044ee3;
+    top: 20px;
+    position: relative;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+#why-choose-trip ul li p {
+  bottom: 19px;
+}
+
+#why-choose-trip ul li {
+  left: 40px;
+  height: fit-content;
+}
+
+#why-choose-container{
+  animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+will-change: transform, opacity; /* Improve performance for animations */
+position: relative;
+margin-top: 50px;
+}
+
+.why-choose-content ul li img{
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+
+.why-choose-content ul li p{
+  display: inline-block;
+  position: relative;
+  bottom: 17px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.why-choose-content ul li{
+  position: relative;
+  list-style: none;
+  left: 50px;
+  height: 40px;
+}
+
+
+#vehicle-header {
+    color: #044ee3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    position: relative;
+    height: fit-content;
+    text-align: center;
+    overflow: hidden; /* Ensures content is clipped when outside the container */
+    white-space: nowrap; /* Prevents line wrapping */
+    background-color: #f0f0f0;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+#vehicle-header h2 {
+  animation: scrollAndStop 2s ease-out forwards;
+  font-size: 25px; /* Adjust as needed */
+  margin: 0;
+}
+/* Scrolling animation */
+@keyframes scrollAndStop {
+  0% {
+      transform: translateX(-100%); /* Start outside the left boundary */
+  }
+  70% {
+      transform: translateX(0); /* Move to the center (stop here) */
+  }
+  100% {
+      transform: translateX(0); /* Maintain the position */
+  }
+}
+
+#vehicle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+.vehicle-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-card:hover{
+    text-decoration: none;
+}
+@keyframes scale {
+    0% {
+        opacity: 0; /* Fully transparent */
+    }
+    50% {
+        opacity: 1; /* Fully visible */
+    }
+}
+.vehicle-card a{
+    text-decoration: none;
+} 
+.vehicle-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.vehicle-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: black;
+}
+.vehicle-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+#footer {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    padding-top: 10px;
+    width: 100%;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+#social-media {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#social-media li {
+    display: inline;
+}
+
+#social-media a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+#social-media a:hover {
+    color: #1da1f2; /* Example: Twitter blue */
+}
+
+#social-media a svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 769px) {
+    .gallery img {
+        max-width: 200px;
+      }
+  
+    .scroll-button {
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+    #menu-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navmen{
+        display: inline-block;
+    }
+
+    #menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #menu li{
+        display: inline-block;
+        position: relative;
+        margin-right: 10px;
+        top: 20px;
+    }
+
+    #search-bar {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+
+    #trip-planner-title {
+        font-size: 2em;
+    }
+
+}
+
+@media (max-width: 426px) {
+    #float-whatsapp-container{
+        right: 5px;
+    }
+    .gallery img {
+        max-width: 150px;
+      }
+  
+      .scroll-button {
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #vehicle-header{
+      width: 300px;
+    }
+
+    .vehicle-card{
+        width: 250px;
+    }
+
+    #menu{
+        position: relative;
+        display: inline-block;
+        bottom: 40px;
+    }
+
+    #name{
+        position: relative;
+        bottom: 42px;
+        right: 40px;
+    }
+
+    .BMLogo {
+        position: relative;
+        right: 155px;
+    }
+
+    
+    .why-choose-container{
+      animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+    will-change: transform, opacity; /* Improve performance for animations */
+    position: relative;
+    margin-top: 50px;
+    }
+    
+    .why-choose-content ul li img{
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+    }
+    
+    .why-choose-content ul li p{
+      display: inline-block;
+      position: relative;
+      bottom: 17px;
+      font-style: italic;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .why-choose-content ul li{
+      position: relative;
+      list-style: none;
+      left: 50px;
+      height: 40px;
+    }
+    
+    .why-choose-content{
+      position: relative;
+      right: 10px;
+      width: 300px;
+    }
+
+    #why-choose-trip ul li p {
+      bottom: 19px;
+    }
+    
+    #why-choose-trip ul li {
+      left: 40px;
+      height: fit-content;
+    }
+
+}
+#choose-car-name {
+    text-align: center;
+    color: #044ee3;
+    position: relative;
+    top: 30px;
+    font-size: 2.7em;
+    justify-content: center;
+}
+#car-type-header {
+    position: relative;
+    top: 0.5px;
+    padding-bottom: 20px;
+    box-shadow: 5px 4px 6px rgb(255, 255, 255);
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+#car-type-header p {
+    color: rgb(7, 7, 7);
+    margin: 20px 0 ;
+    position: relative;
+    left: 2px;
+    top: 10px;
+    font-size: 1.2em;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+#trip-type-container{
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+#trip-type-header {
+    position: relative;
+    top: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+#trip-type-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.7em;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+#trip-type-header p {
+    margin: 10px 0;
+    font-size: 1.2em;
+    padding: 20px;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+#trip-types {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+.trip-card {
+    background: #044ee3;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+.trip-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+.trip-card h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: white;
+    padding-left: 10px;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+.trip-card p {
+    padding: 0 10px;
+    font-size: 1em;
+    color: whitesmoke;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
+
+.trip-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+  /* Scroll Buttons */
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    opacity: 2;
+    z-index: 10;
+  }
+  
+  .scroll-button:hover {
+    opacity: 5;
+  }
+
+  .scroll-button-left {
+    left: 10px;
+  }
+
+  .scroll-button-right {
+    right: 10px;
+  }
+
+   #scrollRight p,#scrollLeft p{
+    position: relative;
+    bottom: 3px;
+   }
+   #trip-detail-container{
+    height: fit-content;
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+   }
+   #trip-detail-header {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    border-radius: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+ #trip-planner-title {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    border-radius: 30px 30px 0 0;
+    margin: -20px -20px 20px -20px;
+}
+
+.radio-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.radio-group label {
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #ff6f61;
+}
+
+#plan-my-trip-btn {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    padding: 12px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#plan-my-trip-btn:hover {
+    background-color: #044ee3;
+}
+
+.output {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+hr{
+    animation: scrollUp 1s ease-out; /* Animation duration and easing function */
+  will-change: transform, opacity; /* Improve performance for animations */
+}
